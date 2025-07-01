@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -24,12 +23,23 @@ export default {
 				'nunito': ['Nunito', 'sans-serif'],
 			},
 			colors: {
-				// Custom tutoring platform colors
-				'tutor-yellow': '#FACC15',
-				'tutor-green': '#10B981',
-				'tutor-blue': '#3B82F6',
+				// New color palette for private tutoring platform
+				'primary-blue': '#1B4F72',
+				'primary-green': '#28B463',
+				'secondary-turquoise': '#3498DB',
+				'light-green': '#82E0AA',
+				'accent-orange': '#E67E22',
+				'accent-yellow': '#F1C40F',
+				'light-gray': '#F4F6F7',
+				'medium-gray': '#BFC9CA',
+				'dark-gray': '#333333',
+				
+				// Keep existing tutor colors for backward compatibility
+				'tutor-yellow': '#F1C40F',
+				'tutor-green': '#28B463',
+				'tutor-blue': '#3498DB',
 				'warm-gray': {
-					50: '#FAFAFA',
+					50: '#F4F6F7',
 					100: '#F5F5F5',
 					200: '#E5E5E5',
 					300: '#D4D4D4',

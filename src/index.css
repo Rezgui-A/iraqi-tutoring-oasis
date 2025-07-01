@@ -5,6 +5,18 @@
 
 @layer base {
   :root {
+    /* New color palette CSS variables */
+    --primary-blue: #1B4F72;
+    --primary-green: #28B463;
+    --secondary-turquoise: #3498DB;
+    --light-green: #82E0AA;
+    --accent-orange: #E67E22;
+    --accent-yellow: #F1C40F;
+    --light-gray: #F4F6F7;
+    --medium-gray: #BFC9CA;
+    --dark-gray: #333333;
+    
+    /* Shadcn variables */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -32,11 +44,11 @@
   }
 
   body {
-    @apply bg-warm-gray-50 text-foreground font-inter;
+    @apply bg-light-gray text-dark-gray font-inter;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-nunito font-semibold;
+    @apply font-nunito font-semibold text-dark-gray;
   }
 }
 
@@ -46,10 +58,26 @@
   }
   
   .btn-primary {
-    @apply bg-tutor-yellow hover:bg-yellow-500 text-gray-800 font-medium px-6 py-3 rounded-lg transition-colors duration-200;
+    @apply bg-accent-orange hover:bg-orange-600 text-white font-medium px-6 py-3 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg;
   }
   
   .btn-secondary {
-    @apply bg-tutor-green hover:bg-emerald-600 text-white font-medium px-6 py-3 rounded-lg transition-colors duration-200;
+    @apply bg-primary-green hover:bg-green-600 text-white font-medium px-6 py-3 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-blue text-primary-blue hover:bg-primary-blue hover:text-white font-medium px-6 py-3 rounded-lg transition-colors duration-200;
+  }
+
+  .nav-primary {
+    @apply bg-primary-blue text-white;
+  }
+
+  .highlight-green {
+    @apply bg-primary-green text-white;
+  }
+
+  .accent-badge {
+    @apply bg-accent-yellow text-dark-gray;
   }
 }
