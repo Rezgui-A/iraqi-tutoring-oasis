@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
-import { GraduationCap, Users, BookOpen, Heart, Translate, Eye, EyeOff } from "lucide-react";
+import { GraduationCap, Users, BookOpen, Heart, Languages, Eye, EyeOff } from "lucide-react";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -224,7 +224,7 @@ const Register = () => {
                 onClick={() => setIsArabic(!isArabic)}
                 className="ml-4 flex items-center space-x-2"
               >
-                <Translate className="h-4 w-4" />
+                <Languages className="h-4 w-4" />
                 <span>{isArabic ? "EN" : "عربي"}</span>
               </Button>
             </div>

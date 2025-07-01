@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, Users, Video, Star, GraduationCap, Heart, Clock, Shield, Globe, Translate } from "lucide-react";
+import { BookOpen, Users, Video, Star, GraduationCap, Heart, Clock, Shield, Globe, Languages } from "lucide-react";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -168,7 +168,7 @@ const Index = () => {
       },
       footer: {
         description: "Empowering education across Iraq through technology and dedicated teachers.",
-        text: "© 2024 IraqiTutor. All rights reserved."
+        copyright: "© 2024 IraqiTutor. All rights reserved."
       }
     }
   };
@@ -229,7 +229,7 @@ const Index = () => {
                 onClick={() => setIsArabic(!isArabic)}
                 className="flex items-center space-x-2"
               >
-                <Translate className="h-4 w-4" />
+                <Languages className="h-4 w-4" />
                 <span>{isArabic ? "EN" : "عربي"}</span>
               </Button>
               <Button 
@@ -478,7 +478,7 @@ const Index = () => {
           </p>
           <div className="border-t border-gray-800 pt-6 mt-6">
             <p className="text-gray-500 text-sm">
-              {t.footer.copyright || t.footer.text}
+              {t.footer.copyright}
             </p>
           </div>
         </div>

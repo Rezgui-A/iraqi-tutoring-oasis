@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, DollarSign, Users, Clock, Video, BookOpen, Star, Settings, LogOut, Translate } from "lucide-react";
+import { Calendar, DollarSign, Users, Clock, Video, BookOpen, Star, Settings, LogOut, Languages } from "lucide-react";
 
 const TeacherDashboard = () => {
   const navigate = useNavigate();
@@ -113,7 +113,7 @@ const TeacherDashboard = () => {
                 onClick={() => setIsArabic(!isArabic)}
                 className="flex items-center space-x-2"
               >
-                <Translate className="h-4 w-4" />
+                <Languages className="h-4 w-4" />
                 <span>{isArabic ? "EN" : "عربي"}</span>
               </Button>
               <Button className="btn-secondary" onClick={() => navigate('/video-call')}>
