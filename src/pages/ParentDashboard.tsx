@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Heart, TrendingUp, Clock, CheckCircle, AlertCircle, User, LogOut, BarChart3 } from "lucide-react";
+import { Heart, TrendingUp, Clock, CheckCircle, AlertCircle, User, LogOut, BarChart3, Eye } from "lucide-react";
 
 const ParentDashboard = () => {
   const navigate = useNavigate();
@@ -85,8 +85,16 @@ const ParentDashboard = () => {
                 size="sm"
                 onClick={() => navigate('/parent-settings')}
               >
+                <Eye className="h-4 w-4 mr-2" />
+                View Profile
+              </Button>
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => navigate('/parent-settings')}
+              >
                 <User className="h-4 w-4 mr-2" />
-                Profile
+                Settings
               </Button>
               <Button 
                 variant="outline" 

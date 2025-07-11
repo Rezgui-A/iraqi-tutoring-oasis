@@ -1,10 +1,9 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Calendar, Clock, Upload, Video, BookOpen, GraduationCap, User, LogOut } from "lucide-react";
+import { Calendar, Clock, Upload, Video, BookOpen, GraduationCap, User, LogOut, Eye } from "lucide-react";
 
 const StudentDashboard = () => {
   const navigate = useNavigate();
@@ -77,8 +76,16 @@ const StudentDashboard = () => {
                 size="sm"
                 onClick={() => navigate('/student-settings')}
               >
+                <Eye className="h-4 w-4 mr-2" />
+                View Profile
+              </Button>
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => navigate('/student-settings')}
+              >
                 <User className="h-4 w-4 mr-2" />
-                Profile
+                Settings
               </Button>
               <Button 
                 variant="outline" 

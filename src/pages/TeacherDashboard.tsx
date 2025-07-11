@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, DollarSign, Users, Clock, Video, BookOpen, Star, Settings, LogOut, Languages } from "lucide-react";
+import { Calendar, DollarSign, Users, Clock, Video, BookOpen, Star, Settings, LogOut, Languages, Eye } from "lucide-react";
 
 const TeacherDashboard = () => {
   const navigate = useNavigate();
@@ -119,6 +119,14 @@ const TeacherDashboard = () => {
               <Button className="btn-secondary" onClick={() => navigate('/video-call')}>
                 <Video className="h-4 w-4 mr-2" />
                 {t.nav.videoCall}
+              </Button>
+              <Button 
+                variant="outline"
+                size="sm"
+                onClick={() => navigate('/teacher-settings')}
+              >
+                <Eye className="h-4 w-4 mr-2" />
+                View Profile
               </Button>
               <Button 
                 variant="outline"
