@@ -10,6 +10,9 @@ import Register from "./pages/Register";
 import StudentDashboard from "./pages/StudentDashboard";
 import ParentDashboard from "./pages/ParentDashboard";
 import TeacherDashboard from "./pages/TeacherDashboard";
+import StudentSettings from "./pages/StudentSettings";
+import ParentSettings from "./pages/ParentSettings";
+import TeacherSettings from "./pages/TeacherSettings";
 import VideoCall from "./pages/VideoCall";
 import NotFound from "./pages/NotFound";
 
@@ -28,6 +31,9 @@ const App = () => (
           <Route path="/student-dashboard" element={<StudentDashboard />} />
           <Route path="/parent-dashboard" element={<ParentDashboard />} />
           <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
+          <Route path="/student-settings" element={<StudentSettings />} />
+          <Route path="/parent-settings" element={<ParentSettings />} />
+          <Route path="/teacher-settings" element={<TeacherSettings />} />
           <Route path="/video-call" element={<VideoCall />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

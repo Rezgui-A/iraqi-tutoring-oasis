@@ -120,7 +120,10 @@ const TeacherDashboard = () => {
                 <Video className="h-4 w-4 mr-2" />
                 {t.nav.videoCall}
               </Button>
-              <Button variant="outline">
+              <Button 
+                variant="outline"
+                onClick={() => navigate('/teacher-settings')}
+              >
                 <Settings className="h-4 w-4 mr-2" />
                 {t.nav.settings}
               </Button>
