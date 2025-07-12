@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { LogOut, User, Settings, BookOpen } from "lucide-react";
@@ -12,7 +13,7 @@ const Navigation: React.FC = () => {
   const { user, logout, isAuthenticated } = useAuth();
   const { language, setLanguage, isRTL, t } = useLanguage();
   const navigate = useNavigate();
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 
   const handleLogout = () => {
     logout();
@@ -26,10 +27,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
       .toUpperCase();
   };
 
-
- 
   if (!isAuthenticated) {
-
     return (
       <nav className={`bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b ${isRTL ? "rtl" : "ltr"}`} dir={isRTL ? "rtl" : "ltr"}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,32 +92,19 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-<Button 
-  variant="ghost" 
-  className="relative h-8 w-8 rounded-full p-0 hover:bg-gray-100"
->          <div className="relative h-8 w-8 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
-            <img
-          src={`${API_BASE_URL}${user.pic_url.startsWith('/') ? '' : '/'}${user.pic_url}?t=${Date.now()}`}
-              alt="Profile"
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                const img = e.currentTarget;
-                console.error('Failed to load image:', img.src);
-                
-                // Fallback to default image
-                if (!img.src.includes('default-profile.png')) {
-                  img.src = `${API_BASE_URL}/uploads/profile-pics/default-profile.png`;
-                } 
-                // If default image also fails, show initials as SVG
-                else {
-                  const initials = getInitials(user?.name || "U");
-                  img.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="50" fill="%233b82f6"/><text x="50" y="60" font-family="Arial" font-size="40" fill="white" text-anchor="middle">${initials}</text></svg>`;
-                  img.onerror = null; // Prevent infinite loop
-                }
-              }}
-            />
-          </div>
-
+                <Button 
+                  variant="ghost" 
+                  className="relative h-8 w-8 rounded-full p-0 hover:bg-gray-100"
+                >
+                  <Avatar className="h-8 w-8">
+                    <AvatarImage 
+                      src={user?.pic_url ? `${API_BASE_URL}${user.pic_url.startsWith('/') ? '' : '/'}${user.pic_url}?t=${Date.now()}` : undefined}
+                      alt="Profile"
+                    />
+                    <AvatarFallback className="bg-blue-600 text-white text-xs">
+                      {getInitials(user?.name || "U")}
+                    </AvatarFallback>
+                  </Avatar>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56" align={isRTL ? "start" : "end"} forceMount>
@@ -130,7 +115,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
                   </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => navigate( "/" + user?.role + "-settings")}>
+                <DropdownMenuItem onClick={() => navigate("/" + user?.role + "-settings")}>
                   <Settings className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"}`} />
                   <span>{t("nav.settings")}</span>
                 </DropdownMenuItem>
